@@ -76,7 +76,6 @@ function App() {
               }}
             >
               <Card sx={{width: '100%', display: 'flex', p: 2, borderRadius: 6}}>
-
                 <TextField sx={{ width: 'calc(100% - 40px)', marginRight: '10px' }} />
                 <IconButton color="primary" aria-label="Send">
                   <SendIcon />

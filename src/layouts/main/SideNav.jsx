@@ -1,10 +1,9 @@
 import React from 'react';
-import { Drawer, Stack, Typography, Box, ButtonBase, Card, Avatar } from '@mui/material';
+import { Drawer, Stack, Typography, Box, ButtonBase, Card, Avatar, SvgIcon } from '@mui/material';
 import { useTheme } from '@emotion/react';
-// import { useDispatch } from 'react-redux';
-import { Person } from '@mui/icons-material';
 import SettingsIcon from '@mui/icons-material/Settings';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import ChatPersonCard from './components/ChatPersonCard';
+import UserInfoCard from './components/UserInfoCard';
 
 
 const SideNavButton = ({ children, icon, onClick }) => (
@@ -52,6 +51,7 @@ function SideNav() {
           backgroundColor: theme.palette.primary.main,
           width: 400,
           zIndex: 1,
+          borderRight: 'none',
         },
       }}
     >
@@ -79,78 +79,17 @@ function SideNav() {
             <Typography variant="h4" color='white'>
               DanChat
             </Typography>
-            <SettingsIcon color='white'/>
+            <SvgIcon sx={{color: 'white'}}>
+              <SettingsIcon/>
+            </SvgIcon>
           </Box>
-          <Card sx={{p: 3, display: 'flex', alignItems: 'center', gap: 2, borderRadius: 6}}>
-            <Avatar>
-              <Person /> 
-            </Avatar>
-              <Stack>
-              <Typography>
-                Albert Einstein
-              </Typography>
-              <Typography variant='overline'>
-                Jan 6, 2023
-              </Typography>
-              </Stack>
-          </Card>
-          <Card sx={{p: 3, display: 'flex', alignItems: 'center', gap: 2, borderRadius: 6}}>
-            <Avatar>
-              <Person /> 
-            </Avatar>
-            <Stack>
-              <Typography>
-                Albert Einstein
-              </Typography>
-              <Typography variant='overline'>
-                Jan 6, 2023
-              </Typography>
-              </Stack>
-          </Card>
-          <Card sx={{p: 3, display: 'flex', alignItems: 'center', gap: 2, borderRadius: 6}}>
-            <Avatar>
-              <Person /> 
-            </Avatar>
-            <Stack>
-              <Typography>
-                Albert Einstein
-              </Typography>
-              <Typography variant='overline'>
-                Jan 6, 2023
-              </Typography>
-              </Stack>
-          </Card>
-          <Card sx={{p: 3, display: 'flex', alignItems: 'center', gap: 2, borderRadius: 6}}>
-            <Avatar>
-              <Person /> 
-            </Avatar>
-            <Stack>
-              <Typography>
-                Albert Einstein
-              </Typography>
-              <Typography variant='overline'>
-                Jan 6, 2023
-              </Typography>
-              </Stack>
-          </Card>
-        </Stack>
+          <ChatPersonCard />
+          <ChatPersonCard />
+          <ChatPersonCard />
+          <ChatPersonCard />
+          </Stack>
       </Box>
-      <Card sx={{p: 3, display: 'flex', alignItems: 'center', flexDirection:'reverse', gap: 2, borderRadius: 0, justifyContent: 'space-between'}}>
-            <Box sx={{display: 'flex', alignItems: 'center', gap: 3}}>
-            <Avatar>
-              <Person /> 
-            </Avatar>
-            <Stack>
-              <Typography>
-                Dan Nguyen
-              </Typography>
-              <Typography variant='overline'>
-                test@test.com
-              </Typography>
-              </Stack>
-            </Box>
-              <MoreVertIcon />
-          </Card>
+      <UserInfoCard />
     </Drawer>
   );
 }
