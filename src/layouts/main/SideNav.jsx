@@ -5,33 +5,6 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import ChatPersonCard from './components/ChatPersonCard';
 import UserInfoCard from './components/UserInfoCard';
 
-
-const SideNavButton = ({ children, icon, onClick }) => (
-  <ButtonBase
-    sx={{
-      alignItems: 'center',
-      borderRadius: 1,
-      display: 'flex',
-      justifyContent: 'flex-start',
-      pl: '16px',
-      pr: '16px',
-      py: '10px',
-      textAlign: 'left',
-      width: '100%',
-      fontSize: '16px',
-      color: 'white',
-      '&:hover': {
-        backgroundColor: 'rgba(255, 255, 255, 0.04)',
-      },
-    }}
-    onClick={onClick}
-  >
-    {icon && React.isValidElement(icon) && (
-      <span style={{ marginRight: '8px', fontSize: 'small' }}>{icon}</span>
-    )}    <Typography>{children}</Typography>
-  </ButtonBase>
-);
-
 function SideNav() {
   const theme = useTheme();
 //   const dispatch = useDispatch();
